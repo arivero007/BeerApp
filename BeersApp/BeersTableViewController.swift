@@ -7,31 +7,55 @@
 //
 
 import UIKit
+import JGProgressHUD
 
-class BeersTableViewController: UITableViewController, WSDelegate {
+class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDelegate {
     
     let ws: WebService = WebService()
+    var hud: JGProgressHUD?
+    
     var beers = [Beer]()
+    var filteredBeers = [Beer]()
 
+    //MARK: UI References
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    //MARK: LIFECYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ws.delegate = self
+        searchBar.delegate = self
         
-        if NetworkState.isConnected(){
-            ws.getBeersList()
-        }
+        //Call for beers!
+        getBeers()
+        
+        registerCell()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     //MARK: Bar Items
     
     @IBAction func refreshData(_ sender: Any) {
+        getBeers()
+    }
+    
+    // MARK: - Search bar view data source
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if NetworkState.isConnected(){
-            ws.getBeersList()
+        for item in beers{
+            
+            if item.name.contains(searchText){
+                
+            }
         }
         
     }
@@ -48,6 +72,37 @@ class BeersTableViewController: UITableViewController, WSDelegate {
         // #warning Incomplete implementation, return the number of rows
         return beers.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell") as? BeerTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.beerName.text = beers[indexPath.item].name
+        
+        return cell
+    }
+    
+    //MARK: FUNCTIONS
+    
+    private func registerCell() {
+        let cell = UINib(nibName: "BeerTableViewCell",
+                            bundle: nil)
+        self.tableView.register(cell,
+                                forCellReuseIdentifier: "menuCell")
+    }
+    
+    private func getBeers(){
+        
+        if NetworkState.isConnected(){
+            hud = JGProgressHUD(style: .dark)
+            hud?.textLabel.text = "Cargando..."
+            hud?.show(in: self.view)
+            ws.getBeersList()
+        }else{
+            Utils.showAlert(title: "Error", text: "No hay conexión a internet", view: self)
+        }
+    }
 
     //MARK: WSDelegate
     
@@ -59,6 +114,8 @@ class BeersTableViewController: UITableViewController, WSDelegate {
         let  dictionary = json as? [Any]
         
         DispatchQueue.main.async {
+            
+            self.hud?.dismiss()
             
             if (dictionary != nil && dictionary?.count != 0){
                 
@@ -92,6 +149,7 @@ class BeersTableViewController: UITableViewController, WSDelegate {
     
     internal func didFailWS() {
         DispatchQueue.main.async {
+            self.hud?.dismiss()
             Utils.showAlert(title: "Error", text: "Error de comunicación con el servidor", view: self)
         }
     }
