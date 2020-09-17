@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 class Utils {
     
@@ -14,4 +16,24 @@ class Utils {
     
     static let urlBase = "https://api.punkapi.com/v2/"
     
+    
+    //MARK: FUNCTIONS
+    
+    static func showAlert(title: String?, text: String?, view: UIViewController){
+        
+        let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cerrar", style: .default, handler: nil))
+        view.present(alert, animated: true)
+    }
+    
+}
+
+//MARK: STRUCTS
+
+
+struct Beer {
+    var name: String = ""
+    var url_image: String = ""
+    var description: String = ""
+    var abv: Double = 0
 }

@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		2209F6D49246EBC5AAEAC9C8 /* Pods_BeersAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB48AD720CA1901E1407FE06 /* Pods_BeersAppTests.framework */; };
 		78A800A12513C1340031D033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800A02513C1340031D033 /* AppDelegate.swift */; };
-		78A800A52513C1340031D033 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800A42513C1340031D033 /* ViewController.swift */; };
 		78A800A82513C1340031D033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A800A62513C1340031D033 /* Main.storyboard */; };
-		78A800AA2513C1380031D033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78A800A92513C1380031D033 /* Assets.xcassets */; };
 		78A800AD2513C1380031D033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A800AB2513C1380031D033 /* LaunchScreen.storyboard */; };
 		78A800B82513C1380031D033 /* BeersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800B72513C1380031D033 /* BeersAppTests.swift */; };
 		78A800C32513C1380031D033 /* BeersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800C22513C1380031D033 /* BeersAppUITests.swift */; };
 		78A800D42513C63E0031D033 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800D32513C63E0031D033 /* NetworkState.swift */; };
 		78A800D72513C6BD0031D033 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800D62513C6BD0031D033 /* Utils.swift */; };
 		78A800D92513C78F0031D033 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800D82513C78F0031D033 /* WebService.swift */; };
+		78A800DB2513CE670031D033 /* BeersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800DA2513CE670031D033 /* BeersTableViewController.swift */; };
+		78A800DF2513DFFB0031D033 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800DD2513DFFB0031D033 /* BeerTableViewCell.swift */; };
+		78A800E02513DFFB0031D033 /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A800DE2513DFFB0031D033 /* BeerTableViewCell.xib */; };
 		A49705B8074873F873252B56 /* Pods_BeersApp_BeersAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867F5F975C4062B7F5983AB6 /* Pods_BeersApp_BeersAppUITests.framework */; };
 		B59E97367189C3B440DD79CA /* Pods_BeersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03509321B7C95CCEF6FC6564 /* Pods_BeersApp.framework */; };
 /* End PBXBuildFile section */
@@ -46,9 +47,7 @@
 		61637006572420D59FB22C67 /* Pods-BeersApp-BeersAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeersApp-BeersAppUITests.release.xcconfig"; path = "Target Support Files/Pods-BeersApp-BeersAppUITests/Pods-BeersApp-BeersAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		78A8009D2513C1340031D033 /* BeersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A800A02513C1340031D033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78A800A42513C1340031D033 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78A800A72513C1340031D033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		78A800A92513C1380031D033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78A800AC2513C1380031D033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78A800AE2513C1380031D033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A800B32513C1380031D033 /* BeersAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeersAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +59,9 @@
 		78A800D32513C63E0031D033 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
 		78A800D62513C6BD0031D033 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		78A800D82513C78F0031D033 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		78A800DA2513CE670031D033 /* BeersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersTableViewController.swift; sourceTree = "<group>"; };
+		78A800DD2513DFFB0031D033 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		78A800DE2513DFFB0031D033 /* BeerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
 		867F5F975C4062B7F5983AB6 /* Pods_BeersApp_BeersAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeersApp_BeersAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		977337006658890AC5178A05 /* Pods-BeersApp-BeersAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeersApp-BeersAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeersApp-BeersAppUITests/Pods-BeersApp-BeersAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D9ACC1B1A28C57668A17789 /* Pods-BeersAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeersAppTests.debug.xcconfig"; path = "Target Support Files/Pods-BeersAppTests/Pods-BeersAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,10 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				78A800A02513C1340031D033 /* AppDelegate.swift */,
-				78A800A42513C1340031D033 /* ViewController.swift */,
+				78A800DA2513CE670031D033 /* BeersTableViewController.swift */,
 				78A800D02513C2FE0031D033 /* Utils */,
+				78A800DC2513DFCB0031D033 /* CustomTableViewCells */,
 				78A800A62513C1340031D033 /* Main.storyboard */,
-				78A800A92513C1380031D033 /* Assets.xcassets */,
 				78A800AB2513C1380031D033 /* LaunchScreen.storyboard */,
 				78A800AE2513C1380031D033 /* Info.plist */,
 			);
@@ -175,6 +177,15 @@
 				78A800D82513C78F0031D033 /* WebService.swift */,
 			);
 			path = WebServices;
+			sourceTree = "<group>";
+		};
+		78A800DC2513DFCB0031D033 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				78A800DD2513DFFB0031D033 /* BeerTableViewCell.swift */,
+				78A800DE2513DFFB0031D033 /* BeerTableViewCell.xib */,
+			);
+			path = CustomTableViewCells;
 			sourceTree = "<group>";
 		};
 		B5C1F802A416177E3EFB8C6F /* Pods */ = {
@@ -299,8 +310,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A800E02513DFFB0031D033 /* BeerTableViewCell.xib in Resources */,
 				78A800AD2513C1380031D033 /* LaunchScreen.storyboard in Resources */,
-				78A800AA2513C1380031D033 /* Assets.xcassets in Resources */,
 				78A800A82513C1340031D033 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,8 +441,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A800D42513C63E0031D033 /* NetworkState.swift in Sources */,
-				78A800A52513C1340031D033 /* ViewController.swift in Sources */,
+				78A800DF2513DFFB0031D033 /* BeerTableViewCell.swift in Sources */,
 				78A800A12513C1340031D033 /* AppDelegate.swift in Sources */,
+				78A800DB2513CE670031D033 /* BeersTableViewController.swift in Sources */,
 				78A800D92513C78F0031D033 /* WebService.swift in Sources */,
 				78A800D72513C6BD0031D033 /* Utils.swift in Sources */,
 			);

@@ -23,13 +23,12 @@ import Foundation
 class WebService {
     weak var delegate: WSDelegate?
     
-    func executeWS(dictParameters: Dictionary<String, Any>, urlServer: String, parameter: String){
+    func executeWS(urlServer: String, parameter: String){
                 
         guard let aUrl = URL(string: urlServer) else {
             print("No se ha procesado la URL")
             return
         }
-        NSLog("dict: %@", dictParameters);
         
         var request = URLRequest.init(url: aUrl, cachePolicy: URLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 30.0)
         
@@ -38,13 +37,6 @@ class WebService {
             request.httpMethod = parameter
         }else{
             request.httpMethod = "POST"
-        }
-
-        if(!dictParameters.isEmpty){
-            let jsonData = try? JSONSerialization.data(withJSONObject:dictParameters, options:[])
-            request.setValue(String.init(format: "%lu",   jsonData?.count ?? 0 ), forHTTPHeaderField: "Content-Length")
-            request.httpBody = jsonData
-            request.setValue("application/json", forHTTPHeaderField: "content-type")
         }
 
         let session = URLSession.shared
@@ -78,7 +70,7 @@ class WebService {
                     
                        if response.statusCode == 200{
                         
-                        if (urlServer == Utils.urlBase){
+                        if (urlServer == Utils.urlBase + "beers"){
                             self.delegate?.didSuccessGetBeersWS?(result: data!)
                         }
                         
@@ -93,7 +85,9 @@ class WebService {
                        }
                 }else{
                     if response.statusCode == 200{
-                     
+                        if (urlServer == Utils.urlBase){
+                            self.delegate?.didSuccessGetBeersWS?(result: data!)
+                        }
                     }else if(response.statusCode == 400){
                         
                     }else if(response.statusCode == 401){
@@ -113,10 +107,8 @@ class WebService {
     
     //MARK: LOGIN
     
-    func getBeersList(country: String){
-        
-        var dict:[String: Any] = [:]
-        dict.updateValue(country, forKey: "country")
-        self.executeWS(dictParameters: dict, urlServer: Utils.urlBase + "beers", parameter: "")
+    func getBeersList(){
+
+        self.executeWS(urlServer: Utils.urlBase + "beers", parameter: "GET")
     }
 }

@@ -7,6 +7,7 @@ target 'BeersApp' do
 
   # Pods for BeersApp
   pod 'Alamofire', '~> 5.2'
+  pod 'JGProgressHUD'
 
   target 'BeersAppTests' do
     inherit! :search_paths
