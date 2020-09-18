@@ -29,11 +29,10 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
         ws.delegate = self
         searchBar.delegate = self
         
-        //Call for beers!
-        getBeers()
-        
         registerCell()
         
+        //Call for beers!
+        getBeers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,13 +50,20 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        for item in beers{
-            
-            if item.name.contains(searchText){
+        filteredBeers = []
+        
+        if searchText == ""{
+            filteredBeers = beers
+        }else{
+            for beer in beers{
                 
+                if beer.name.contains(searchText){
+                    filteredBeers.append(beer)
+                }
             }
         }
         
+        self.tableView.reloadData()
     }
     
 
@@ -70,7 +76,7 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return beers.count
+        return filteredBeers.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,7 +84,7 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
             return UITableViewCell()
         }
         
-        cell.beerName.text = beers[indexPath.item].name
+        cell.beerName.text = filteredBeers[indexPath.item].name
         
         return cell
     }
@@ -141,6 +147,7 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
                     self.beers.append(beer)
                 }
                 
+                self.filteredBeers = self.beers
                 self.tableView.reloadData()
             }
         
