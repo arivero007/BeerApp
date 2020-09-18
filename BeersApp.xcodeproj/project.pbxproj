@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2209F6D49246EBC5AAEAC9C8 /* Pods_BeersAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB48AD720CA1901E1407FE06 /* Pods_BeersAppTests.framework */; };
+		784F81B02514D38900BF7925 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 784F81AF2514D38900BF7925 /* Localizable.strings */; };
+		7895D2982514C91800026FF1 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7895D2972514C91800026FF1 /* BeerViewController.swift */; };
 		78A800A12513C1340031D033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A800A02513C1340031D033 /* AppDelegate.swift */; };
 		78A800A82513C1340031D033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A800A62513C1340031D033 /* Main.storyboard */; };
 		78A800AD2513C1380031D033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A800AB2513C1380031D033 /* LaunchScreen.storyboard */; };
@@ -45,6 +47,10 @@
 		4104CE3B6B0A5AED3B879E7F /* Pods-BeersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeersApp.debug.xcconfig"; path = "Target Support Files/Pods-BeersApp/Pods-BeersApp.debug.xcconfig"; sourceTree = "<group>"; };
 		527A25F628524AA2E6B20C31 /* Pods-BeersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeersApp.release.xcconfig"; path = "Target Support Files/Pods-BeersApp/Pods-BeersApp.release.xcconfig"; sourceTree = "<group>"; };
 		61637006572420D59FB22C67 /* Pods-BeersApp-BeersAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeersApp-BeersAppUITests.release.xcconfig"; path = "Target Support Files/Pods-BeersApp-BeersAppUITests/Pods-BeersApp-BeersAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		784F81AA2514D2CC00BF7925 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		784F81AB2514D2CC00BF7925 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		784F81AF2514D38900BF7925 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7895D2972514C91800026FF1 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		78A8009D2513C1340031D033 /* BeersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A800A02513C1340031D033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78A800A72513C1340031D033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,11 +140,13 @@
 			children = (
 				78A800A02513C1340031D033 /* AppDelegate.swift */,
 				78A800DA2513CE670031D033 /* BeersTableViewController.swift */,
+				7895D2972514C91800026FF1 /* BeerViewController.swift */,
 				78A800D02513C2FE0031D033 /* Utils */,
 				78A800DC2513DFCB0031D033 /* CustomTableViewCells */,
 				78A800A62513C1340031D033 /* Main.storyboard */,
 				78A800AB2513C1380031D033 /* LaunchScreen.storyboard */,
 				78A800AE2513C1380031D033 /* Info.plist */,
+				784F81AF2514D38900BF7925 /* Localizable.strings */,
 			);
 			path = BeersApp;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 78A800942513C1340031D033;
 			productRefGroup = 78A8009E2513C1340031D033 /* Products */;
@@ -311,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A800E02513DFFB0031D033 /* BeerTableViewCell.xib in Resources */,
+				784F81B02514D38900BF7925 /* Localizable.strings in Resources */,
 				78A800AD2513C1380031D033 /* LaunchScreen.storyboard in Resources */,
 				78A800A82513C1340031D033 /* Main.storyboard in Resources */,
 			);
@@ -442,6 +452,7 @@
 			files = (
 				78A800D42513C63E0031D033 /* NetworkState.swift in Sources */,
 				78A800DF2513DFFB0031D033 /* BeerTableViewCell.swift in Sources */,
+				7895D2982514C91800026FF1 /* BeerViewController.swift in Sources */,
 				78A800A12513C1340031D033 /* AppDelegate.swift in Sources */,
 				78A800DB2513CE670031D033 /* BeersTableViewController.swift in Sources */,
 				78A800D92513C78F0031D033 /* WebService.swift in Sources */,
@@ -485,6 +496,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				78A800A72513C1340031D033 /* Base */,
+				784F81AA2514D2CC00BF7925 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -493,6 +505,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				78A800AC2513C1380031D033 /* Base */,
+				784F81AB2514D2CC00BF7925 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -504,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -564,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -618,7 +633,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4104CE3B6B0A5AED3B879E7F /* Pods-BeersApp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -640,7 +654,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 527A25F628524AA2E6B20C31 /* Pods-BeersApp.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";

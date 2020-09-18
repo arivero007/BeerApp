@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  BeersApp
+
+  Created by Alexander Rivero on 18/09/2020.
+  Copyright © 2020 Alexander Rivero. All rights reserved.
+*/
+
+//BEER
+"ABV" = "ABV (Alcohol By Volume) = ";

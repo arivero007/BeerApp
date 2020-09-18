@@ -1,0 +1,17 @@
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "3lC-Pc-6A5"; */
+"3lC-Pc-6A5.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Nombre"; ObjectID = "GhW-Fd-Kbz"; */
+"GhW-Fd-Kbz.text" = "Nombre";
+
+/* Class = "UINavigationItem"; title = "Beers"; ObjectID = "J6M-6t-twL"; */
+"J6M-6t-twL.title" = "Beers";
+
+/* Class = "UIBarButtonItem"; title = "Refresh"; ObjectID = "LrO-NI-uuo"; */
+"LrO-NI-uuo.title" = "Refresh";
+
+/* Class = "UILabel"; text = "ABV (Alcohol By Volume) ="; ObjectID = "nIq-3z-KVi"; */
+"nIq-3z-KVi.text" = "ABV (Alcohol By Volume) = ";
+
+

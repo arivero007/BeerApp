@@ -16,6 +16,8 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
     
     var beers = [Beer]()
     var filteredBeers = [Beer]()
+    
+    var selectedBeer = Beer()
 
     //MARK: UI References
     @IBOutlet weak var searchBar: UISearchBar!
@@ -89,6 +91,15 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        selectedBeer = filteredBeers[indexPath.item]
+        
+        performSegue(withIdentifier: "segueBeer", sender: nil)
+    }
+    
     //MARK: FUNCTIONS
     
     private func registerCell() {
@@ -107,6 +118,15 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
             ws.getBeersList()
         }else{
             Utils.showAlert(title: "Error", text: "No hay conexión a internet", view: self)
+        }
+    }
+    
+    //MARK: NAVIGATION
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueBeer"){
+            let cp = segue.destination as! BeerViewController
+            cp.beer = self.selectedBeer
         }
     }
 

@@ -30,10 +30,26 @@ class Utils {
 
 //MARK: STRUCTS
 
-
 struct Beer {
     var name: String = ""
     var url_image: String = ""
     var description: String = ""
     var abv: Double = 0
 }
+
+//MARK: EXTENSIONS
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
+
