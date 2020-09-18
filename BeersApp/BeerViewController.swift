@@ -13,7 +13,6 @@ class BeerViewController: UIViewController{
     var beer: Beer?
     
     //MARK: UI References
-    
     @IBOutlet weak var beerName: UILabel!
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerDescription: UITextView!
@@ -22,8 +21,7 @@ class BeerViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
+        //Load beer data
         loadData()
     }
     

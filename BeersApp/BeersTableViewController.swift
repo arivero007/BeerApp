@@ -37,18 +37,13 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
         getBeers()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     //MARK: Bar Items
     
     @IBAction func refreshData(_ sender: Any) {
         getBeers()
     }
     
-    // MARK: - Search bar view data source
+    // MARK: - Search bar data source
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -172,6 +167,13 @@ class BeersTableViewController: UITableViewController, WSDelegate, UISearchBarDe
             }
         
         }
+    }
+    
+    internal func didSuccessGetBeersWS() {
+        //Not needed now
+        hud?.dismiss()
+        Utils.showAlert(title: "Aviso", text: "No se han recibido datos", view: self)
+        
     }
     
     internal func didFailWS() {

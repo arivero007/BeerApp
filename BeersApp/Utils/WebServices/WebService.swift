@@ -15,6 +15,7 @@ import Foundation
     
     //BeersWS
     @objc optional func didSuccessGetBeersWS(result: Data)
+    @objc optional func didSuccessGetBeersWS()
 
 
 }
@@ -69,11 +70,9 @@ class WebService {
                        print("Data: ", json)
                     
                        if response.statusCode == 200{
-                        
                         if (urlServer == Utils.urlBase + "beers"){
                             self.delegate?.didSuccessGetBeersWS?(result: data!)
                         }
-                        
                        }else if(response.statusCode == 400){
                            
                        }else if(response.statusCode == 401){
@@ -85,8 +84,8 @@ class WebService {
                        }
                 }else{
                     if response.statusCode == 200{
-                        if (urlServer == Utils.urlBase){
-                            self.delegate?.didSuccessGetBeersWS?(result: data!)
+                        if (urlServer == Utils.urlBase + "beers"){
+                            self.delegate?.didSuccessGetBeersWS?()
                         }
                     }else if(response.statusCode == 400){
                         
